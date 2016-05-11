@@ -1,1 +1,5 @@
-{{ zoo_id }}
+{% for server in zookeeper_hosts %}
+{% if server.host == inventory_hostname %}
+{{ server.id }}
+{% endif %}
+{% endfor %}
